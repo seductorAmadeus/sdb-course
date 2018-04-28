@@ -7,7 +7,7 @@ public class System {
     private Integer serialNumber;
     private String type;
     private Integer requiredAccessLevel;
-    private Date serviceLife;
+    private String serviceLife;
     private Integer permissibleLoad;
     private Integer loading;
     private Integer idleFactor;
@@ -37,11 +37,11 @@ public class System {
         this.requiredAccessLevel = requiredAccessLevel;
     }
 
-    public Date getServiceLife() {
+    public String getServiceLife() {
         return serviceLife;
     }
 
-    public void setServiceLife(Date serviceLife) {
+    public void setServiceLife(String serviceLife) {
         this.serviceLife = serviceLife;
     }
 

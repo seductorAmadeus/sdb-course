@@ -1,12 +1,10 @@
 package com.entities;
 
-import java.util.Date;
-
 public class PersonalData {
 
     private String fullName;
 
-    private Date birthDate;
+    private String birthDate;
 
     private String city;
 
@@ -22,11 +20,11 @@ public class PersonalData {
         this.fullName = fullName;
     }
 
-    public Date getBirthDate() {
+    public String getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(Date birthDate) {
+    public void setBirthDate(String birthDate) {
         this.birthDate = birthDate;
     }
 

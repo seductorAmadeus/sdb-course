@@ -1,6 +1,16 @@
 package com.entities;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection = "spaceship_description")
 public class SpaceshipDescription {
+
+    @Id
+    private String id;
+
+    @DBRef
     private System system;
 
     private String description;
