@@ -1,8 +1,14 @@
 package com.entities;
 
-import java.util.Date;
+import org.bson.types.ObjectId;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+@Document(collection = "system")
 public class System {
+
+    @Id
+    private ObjectId id;
 
     private Integer serialNumber;
     private String type;

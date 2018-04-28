@@ -1,2 +1,16 @@
+==== base operations ====
+
+curl localhost:8080/
+
 curl localhost:8080/crew_profile
+
 curl localhost:8080/spaceship_description
+
+// get alone
+curl localhost:8080/crew_profile/5ad14214db102556bd996ca2
+curl localhost:8080/spaceship_description/5ad13dbfdb102556bd7ae823
+
+// create
+curl -i -X POST -H "Content-Type:application/json" -d "{ \"system\": {\"serialNumber\": 2, \"type\": \"power_supply\", \"requiredAccessLevel\": 3, \"serviceLife\": "25121", \"permissibleLoad\": 10, \"loading\": 11, \"idleFactor\":12, \"workStatus\": \"ready\"}}" http://localhost:8080/spaceship_description
+
+curl -i -X POST -H "Content-Type:application/json" -d "{ \"system\": {\"serialNumber\": 2, \"type\": \"power_supply\", \"requiredAccessLevel\": 3, \"serviceLife\": "25121", \"permissibleLoad\": 10, \"loading\": 11, \"idleFactor\":12, \"workStatus\": \"ready\"}, \"description\": \"some text\", \"flightReadinessStatus\": \"ready\" }" http://localhost:8080/spaceship_description

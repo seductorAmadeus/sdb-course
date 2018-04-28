@@ -1,6 +1,14 @@
 package com.entities;
 
+import org.bson.types.ObjectId;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection = "personalData")
 public class PersonalData {
+
+    @Id
+    private ObjectId id;
 
     private String fullName;
 

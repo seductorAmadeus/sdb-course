@@ -1,5 +1,6 @@
 package com.entities;
 
+import com.annotation.CascadeSave;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -10,7 +11,10 @@ public class CrewProfile {
 
     @Id
     private String id;
+
     @DBRef
+    @Field("personalData")
+    @CascadeSave
     private PersonalData personalData;
 
     private String expeditionMemberProfile;

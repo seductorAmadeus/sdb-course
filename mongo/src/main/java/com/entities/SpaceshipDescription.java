@@ -1,8 +1,10 @@
 package com.entities;
 
+import com.annotation.CascadeSave;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 
 @Document(collection = "spaceship_description")
 public class SpaceshipDescription {
@@ -11,6 +13,8 @@ public class SpaceshipDescription {
     private String id;
 
     @DBRef
+    @Field("system")
+    @CascadeSave
     private System system;
 
     private String description;

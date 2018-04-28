@@ -10,6 +10,6 @@ import java.util.List;
 @RepositoryRestResource(collectionResourceRel = "crew_profile", path = "crew_profile")
 public interface CrewProfileRepository extends MongoRepository<CrewProfile, String> {
 
-    List<CrewProfile> findCrewProfileByExpeditionMemberProfile(@Param("expedition_member_profile") String expeditionMemberProfile);
+    List<CrewProfile> findCrewProfileByExpeditionMemberProfile(@Param("expeditionMemberProfile") String expeditionMemberProfile);
 
 }
