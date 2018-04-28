@@ -12,22 +12,60 @@ public class CrewProfile {
     @Id
     private String id;
 
-    @DBRef
-    @Field("personalData")
-    @CascadeSave
-    private PersonalData personalData;
+    private String fullName;
+
+    private String birthDate;
+
+    private String city;
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
+    public String getBirthDate() {
+        return birthDate;
+    }
+
+    public void setBirthDate(String birthDate) {
+        this.birthDate = birthDate;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public Integer getRequiredAccessLevel() {
+        return requiredAccessLevel;
+    }
+
+    public void setRequiredAccessLevel(Integer requiredAccessLevel) {
+        this.requiredAccessLevel = requiredAccessLevel;
+    }
+
+    public String getSpecialSkills() {
+        return specialSkills;
+    }
+
+    public void setSpecialSkills(String specialSkills) {
+        this.specialSkills = specialSkills;
+    }
+
+    private Integer requiredAccessLevel;
+
+    private String specialSkills;
 
     private String expeditionMemberProfile;
 
     private Integer responsibleForSystem;
 
-    public PersonalData getPersonalData() {
-        return personalData;
-    }
-
-    public void setPersonalData(PersonalData personalData) {
-        this.personalData = personalData;
-    }
 
     public String getExpeditionMemberProfile() {
         return expeditionMemberProfile;

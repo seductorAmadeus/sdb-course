@@ -1,16 +1,27 @@
 ==== base operations ====
 
-curl localhost:8080/
+curl localhost:62112/
 
-curl localhost:8080/crew_profile
+curl localhost:62112/crew_profile
 
-curl localhost:8080/spaceship_description
+curl localhost:62112/spaceship_description
 
 // get alone
-curl localhost:8080/crew_profile/5ad14214db102556bd996ca2
-curl localhost:8080/spaceship_description/5ad13dbfdb102556bd7ae823
+curl localhost:62112/crew_profile/5ae4419eed8aa51b98a2cf9b
+curl localhost:62112/spaceship_description/5ae44024ed8aa56f49f8c80b
 
 // create
-curl -i -X POST -H "Content-Type:application/json" -d "{ \"system\": {\"serialNumber\": 2, \"type\": \"power_supply\", \"requiredAccessLevel\": 3, \"serviceLife\": "25121", \"permissibleLoad\": 10, \"loading\": 11, \"idleFactor\":12, \"workStatus\": \"ready\"}}" http://localhost:8080/spaceship_description
+1.
+curl -i -X POST -H "Content-Type:application/json" -d "{ \"serialNumber\": 2, \"type\": \"power_supply\", \"requiredAccessLevel\": 3, \"serviceLife\": "25121", \"permissibleLoad\": 10, \"loading\": 11, \"idleFactor\":12, \"workStatus\": \"ready\", \"description\": \"Sdacha\", \"flightReadiness\": \"ready\"}" http://localhost:62112/spaceship_description
+2.
+curl -i -X POST -H "Content-Type:application/json" -d "{ \"fullName\": 2, \"birthDate\": 134145553, \"city\": \"CITY!!!!\", \"requiredAccessLevel\": "2", \"specialSkills\": \"Ace in the hole\", \"expeditionMemberProfile\": \"first_pilot\", \"idleFactor\":12, \"responsibleForSystem\": \"891083983\"}" http://localhost:62112/crew_profile
 
-curl -i -X POST -H "Content-Type:application/json" -d "{ \"system\": {\"serialNumber\": 2, \"type\": \"power_supply\", \"requiredAccessLevel\": 3, \"serviceLife\": "25121", \"permissibleLoad\": 10, \"loading\": 11, \"idleFactor\":12, \"workStatus\": \"ready\"}, \"description\": \"some text\", \"flightReadinessStatus\": \"ready\" }" http://localhost:8080/spaceship_description
+// delete (изменить id)
+curl -X DELETE http://localhost:62112/spaceship_description/5ae44024ed8aa56f49f8c80b
+curl -X DELETE http://localhost:62112/crew_profile/5ae4419eed8aa51b98a2cf9b
+
+// update
+curl -X PUT -H "Content-Type:application/json" -d "{ \"serialNumber\": 2355, \"type\": \"power_supply\", \"requiredAccessLevel\": 3, \"serviceLife\": "25121", \"permissibleLoad\": 10, \"loading\": 11, \"idleFactor\":12, \"workStatus\": \"ready\", \"description\": \"AZAZA!!!!111\", \"flightReadiness\": \"ready\"}" http://localhost:62112/spaceship_description/53149b8e3004990b1af9f229
+curl -X PUT -H "Content-Type:application/json" -d "{ \"fullName\": 2, \"birthDate\": 9999, \"city\": \"CITY!!!!\", \"requiredAccessLevel\": "2", \"specialSkills\": \"Ace in the hole\", \"expeditionMemberProfile\": \"first_pilot\", \"idleFactor\":12, \"responsibleForSystem\": \"891083983\"}" http://localhost:62112/crew_profile/5ae4419eed8aa51b98a2cf9b
+
+// update
