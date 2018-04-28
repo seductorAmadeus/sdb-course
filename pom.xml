@@ -12,6 +12,7 @@
     <modules>
         <module>cassandra</module>
         <module>neo4j</module>
+        <module>mongo</module>
     </modules>
 
     <parent>
