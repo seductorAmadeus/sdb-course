@@ -1,10 +1,7 @@
 package com.entities;
 
-import com.annotation.CascadeSave;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.data.mongodb.core.mapping.Field;
 
 @Document(collection = "spaceship_description")
 public class SpaceshipDescription {
@@ -16,6 +13,12 @@ public class SpaceshipDescription {
     private String type;
     private Integer requiredAccessLevel;
     private String serviceLife;
+    private Integer permissibleLoad;
+    private Integer loading;
+    private Integer idleFactor;
+    private String workStatus;
+    private String description;
+    private String flightReadinessStatus;
 
     public Integer getSerialNumber() {
         return serialNumber;
@@ -80,15 +83,6 @@ public class SpaceshipDescription {
     public void setWorkStatus(String workStatus) {
         this.workStatus = workStatus;
     }
-
-    private Integer permissibleLoad;
-    private Integer loading;
-    private Integer idleFactor;
-    private String workStatus;
-
-    private String description;
-
-    private String flightReadinessStatus;
 
     public String getDescription() {
         return description;

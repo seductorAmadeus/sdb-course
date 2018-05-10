@@ -1,10 +1,7 @@
 package com.entities;
 
-import com.annotation.CascadeSave;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.data.mongodb.core.mapping.Field;
 
 @Document(collection = "crew_profile")
 public class CrewProfile {
@@ -17,6 +14,10 @@ public class CrewProfile {
     private String birthDate;
 
     private String city;
+    private Integer requiredAccessLevel;
+    private String specialSkills;
+    private String expeditionMemberProfile;
+    private Integer responsibleForSystem;
 
     public String getFullName() {
         return fullName;
@@ -57,15 +58,6 @@ public class CrewProfile {
     public void setSpecialSkills(String specialSkills) {
         this.specialSkills = specialSkills;
     }
-
-    private Integer requiredAccessLevel;
-
-    private String specialSkills;
-
-    private String expeditionMemberProfile;
-
-    private Integer responsibleForSystem;
-
 
     public String getExpeditionMemberProfile() {
         return expeditionMemberProfile;
