@@ -1,0 +1,43 @@
+DROP KEYSPACE flight_book;
+create keyspace flight_book with REPLICATION = {'class' : 'NetworkTopologyStrategy', 'DC1' : 3};
+USE flight_book;
+
+CREATE TABLE ship_features (
+feature_id UUID,
+description text, 
+PRIMARY KEY (feature_id, description)
+) WITH CLUSTERING ORDER  BY (description DESC) ;
+
+CREATE TABLE registered_failures (
+failure_id UUID,
+description text,
+registration_time timestamp,
+PRIMARY KEY (failure_id, registration_time)
+)
+WITH CLUSTERING ORDER  BY (registration_time DESC);
+
+CREATE TABLE ship_equipment (
+equipm_id UUID,
+description text,	
+weight int,
+PRIMARY KEY (equipm_id, description)
+)
+WITH CLUSTERING ORDER  BY (description DESC);
+
+CREATE TABLE flights_history (
+flight_id UUID,
+flight_date timestamp,
+crew_id int,
+report text,	
+PRIMARY KEY (flight_id, flight_date)
+)
+WITH CLUSTERING ORDER  BY (flight_date DESC);
+
+CREATE TABLE operations_history (
+operation_id UUID,
+operation_date timestamp,
+description text,
+operation_result int,	
+report text,
+PRIMARY KEY (operation_id, operation_date)
+) WITH CLUSTERING ORDER BY (operation_date  DESC);
